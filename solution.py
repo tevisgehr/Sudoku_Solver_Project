@@ -174,7 +174,9 @@ if __name__ == '__main__':
     except:
         print('We could not visualize your board due to a pygame issue. Not a problem! It is not a requirement.')
 
-'''
+''' ###This code was used for testing, but can also be uncommented to test the naked_twins function with test_solution.py.
+    ###test_solution.py is not set up to handle the function being wrapped inside of a class.
+    
 def cross(A, B):
     "Cross product of elements in A and elements in B."
     return [s+t for s in A for t in B]
