@@ -145,7 +145,8 @@ class Board(object):
         self.row_units = [self.cross(r, self.cols) for r in self.rows]
         self.column_units = [self.cross(self.rows, c) for c in self.cols]
         self.square_units = [self.cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
-        self.unitlist = self.row_units + self.column_units + self.square_units
+        self.diagonal_units = [['A1','B2','C3','D4','E5','F6','G7','H8','I9'],['A9','B8','C7','D6','E5','F4','G3','H2','I1']]
+        self.unitlist = self.row_units + self.column_units + self.square_units + self.diagonal_units
         self.units = dict((s, [u for u in self.unitlist if s in u]) for s in self.boxes)
         self.peers = dict((s, set(sum(self.units[s],[]))-set([s])) for s in self.boxes)
 
@@ -155,8 +156,12 @@ if __name__ == '__main__':
     #diag_sudoku_grid = '2..............2....1....7...6..8...3.......7...6......4....8.....2.............3'
     #diag_sudoku_grid = '.........................7......8...3.......7...6................................'
 
-    #'Hard' example found online:
-    diag_sudoku_grid = '....1.8..8..6...5.45.9.3.7....3...9.9.7...4.3.3...1....1.8.4.65.4...6..1..6.7....'
+    #'Hard' example found online(not diagonal):
+    #diag_sudoku_grid = '....1.8..8..6...5.45.9.3.7....3...9.9.7...4.3.3...1....1.8.4.65.4...6..1..6.7....'
+
+    #Diagonal example from online
+    diag_sudoku_grid = '....2.7........5..14..........6.7...8.......4...1.8..........52..8........3.7....'
+
     board = Board(diag_sudoku_grid)
     solution = board.solve()
     board.display(solution)
