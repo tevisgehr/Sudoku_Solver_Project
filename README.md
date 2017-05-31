@@ -13,7 +13,7 @@ on all boards that were attempted.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: This was done very easily by adding the diagonals to the list of units. Once this was done.
+A: This was done very easily by adding the diagonals to the list of units. Once this was done
 the rest of the functions worked the same because they iterate over all of the units in the
 same way.
 
