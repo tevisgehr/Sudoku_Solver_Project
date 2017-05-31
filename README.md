@@ -3,11 +3,19 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: The Naked Twins method was applied by creating a function that determines when any two boxes
+in a unit contain the same (exactly) two possible values. Then both of those values are removed 
+from all other boxes in the unit. The implimentation relies on a set of nested for loops and
+is fairly simple. The constraint was propogated by calling the naked twin function once 
+before every new round of search. This may not have been the most efficient place to put it,
+but it was difficult to determine optimum placement because the overall Sudoku algorithm is very fast 
+on all boards that were attempted.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: This was done very easily by adding the diagonals to the list of units. Once this was done.
+the rest of the functions worked the same because they iterate over all of the units in the
+same way.
 
 ### Install
 
